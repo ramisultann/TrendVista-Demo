@@ -2,6 +2,9 @@
 
 This repository contains a **public, recruiter-friendly live demo** of TrendVista.
 
+### Live demo
+- **Production**: `https://trend-vista-demo.vercel.app/`
+
 ### What’s included
 - `frontend/`: Next.js demo app (runs in **DEMO_MODE** with mock data; no backend required)
 - `showcase/`: public-facing docs/overview (optional, can be removed if you want demo-only)

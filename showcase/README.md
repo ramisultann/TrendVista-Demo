@@ -21,7 +21,7 @@ Because TrendVista is being developed for **commercial use**, the full source co
 - **Clear separation of concerns**: API routes, services, schemas, models, and infra boundaries
 
 ### Demo
-- **Live demo**: (add link after deploy) `https://<your-vercel-app>.vercel.app`
+- **Live demo**: `https://trend-vista-demo.vercel.app/`
 - **Screenshots/GIFs**: see `assets/`
 - **Product walk-through**: see `docs/PRODUCT.md`
 - **Deployment**: see `docs/LIVE_DEMO.md`

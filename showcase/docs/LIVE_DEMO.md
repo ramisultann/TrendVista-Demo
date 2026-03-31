@@ -1,10 +1,13 @@
 ## Live demo (Public)
 
+### Live URL
+- `https://trend-vista-demo.vercel.app/`
+
 ### Recommended setup (safe + recruiter-friendly)
 This demo is designed to be **public** without exposing proprietary backend logic:
 - **Frontend-only** deployment (Vercel)
 - **DEMO_MODE** uses built-in mock data (no database, no collectors, no scraping)
-- **No login required** in demo mode (routes are accessible automatically)
+- **Demo login button** in demo mode (public access, but professional SaaS flow)
 
 ### Deploy steps (Vercel)
 1. Create a new Vercel project from your repo.
