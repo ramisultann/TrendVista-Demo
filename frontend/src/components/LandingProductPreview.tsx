@@ -33,7 +33,7 @@ export default function LandingProductPreview() {
         className="grid grid-cols-1 lg:grid-cols-2 gap-4"
       >
         <div className="relative">
-          <TrendChart data={transformedChartData} compact fill height={240} />
+          <TrendChart data={transformedChartData} compact fill height={270} />
           <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-white/5" />
         </div>
         <div className="relative">
@@ -42,7 +42,7 @@ export default function LandingProductPreview() {
             neutral={summary.sentiment_breakdown.neutral}
             negative={summary.sentiment_breakdown.negative}
             fill
-            height={240}
+            height={270}
           />
           <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-white/5" />
         </div>
