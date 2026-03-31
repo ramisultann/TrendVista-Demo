@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { isDemoMode } from '@/lib/demoMode'
 import LandingProductPreview from '@/components/LandingProductPreview'
+import Starfield from '@/components/Starfield'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -26,8 +27,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden relative">
-      {/* Ambient Background Effects */}
-      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+      {/* Starfield sits ABOVE the black background, BELOW all content */}
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <Starfield className="absolute inset-0" />
+        <div className="absolute inset-0 bg-black/70" />
         <motion.div
           className="absolute w-[600px] h-[600px] bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-full blur-[120px]"
           animate={{
@@ -48,8 +51,8 @@ export default function Home() {
 
       {/* Floating Particles */}
       {mounted && (
-        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-          {[...Array(20)].map((_, i) => (
+        <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+          {[...Array(12)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute w-1 h-1 bg-white/20 rounded-full"
@@ -72,6 +75,8 @@ export default function Home() {
         </div>
       )}
 
+      {/* Foreground content */}
+      <div className="relative z-10">
       {/* Minimal Header */}
       <motion.header
         initial={{ opacity: 0, y: -20 }}
@@ -391,6 +396,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      </div>
     </div>
   )
 }
