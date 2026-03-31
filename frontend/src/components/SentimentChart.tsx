@@ -22,20 +22,20 @@ export default function SentimentChart({ positive, neutral, negative, height = 2
   const total = positive + neutral + negative
   // In `fill` mode, the parent sets a fixed height. We treat the chart area as `flex-1`
   // so the legend + footer never push content outside the card.
-  const outerRadius = fill ? 52 : Math.max(44, Math.min(68, Math.floor(height * 0.42)))
+  const outerRadius = fill ? 48 : Math.max(44, Math.min(68, Math.floor(height * 0.42)))
 
   return (
     <div
       className={`backdrop-blur-md bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-white/20 transition-all flex flex-col ${
-        fill ? 'p-5' : 'p-6'
+        fill ? 'p-4' : 'p-6'
       }`}
       style={fill ? { height } : undefined}
     >
-      <h3 className={`text-sm font-light tracking-wider text-white/60 uppercase ${fill ? 'mb-4' : 'mb-6'}`}>
+      <h3 className={`text-sm font-light tracking-wider text-white/60 uppercase ${fill ? 'mb-3' : 'mb-6'}`}>
         Sentiment Breakdown
       </h3>
 
-      <div className={fill ? 'flex-1 min-h-[120px]' : ''} style={fill ? undefined : { height }}>
+      <div className={fill ? 'flex-1 min-h-0' : ''} style={fill ? undefined : { height }}>
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie
@@ -74,7 +74,7 @@ export default function SentimentChart({ positive, neutral, negative, height = 2
         </ResponsiveContainer>
       </div>
 
-      <div className={`${fill ? 'mt-3' : 'mt-4'} flex items-center justify-center gap-6 text-xs font-light`}>
+      <div className={`${fill ? 'mt-2' : 'mt-4'} flex items-center justify-center gap-6 text-xs font-light`}>
         <div className="flex items-center gap-2 text-cyan-400/80">
           <span className="inline-block w-3 h-3 rounded-full" style={{ background: COLORS[0] as string }} />
           <span>Positive</span>
@@ -89,7 +89,7 @@ export default function SentimentChart({ positive, neutral, negative, height = 2
         </div>
       </div>
 
-      <div className={`${fill ? 'mt-4' : 'mt-6'} text-center text-xs text-white/40 font-light`}>
+      <div className={`${fill ? 'mt-auto pt-3' : 'mt-6'} text-center text-xs text-white/40 font-light`}>
         Total mentions: <span className="text-white/60">{total.toLocaleString()}</span>
       </div>
     </div>
